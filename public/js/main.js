@@ -81,6 +81,7 @@ function updateProduct(){
 
         axios.post('/add-edit-product', { product_name, product_price, product_description, product_id })
         .then(res => {
+             console.log(res.data.data);
             fetchAllProducts();
             $("#editProductModal").modal('hide');
         })
