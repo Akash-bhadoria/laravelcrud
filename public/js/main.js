@@ -1,6 +1,30 @@
 
 
 
+$(function() {
+
+    let listData ="";
+   axios.get('https://jsonplaceholder.typicode.com/todos')
+   .then(res=>{
+    //    console.log(res.data.title)
+    if(res.data.length>0){
+        res.data.forEach(todo=>{
+            let listData = "";
+            listData+=`
+                        <li class="list-group-item">${todo.title}</li>
+                     `;
+        })
+        $("#todolist").html(listData)
+    }
+
+   })
+   .catch(err=>{
+
+   })
+
+})
+
+
 function addNewProduct() {
     let product_name = $("#name").val(),
         product_price = $("#price").val(),
@@ -100,3 +124,6 @@ function deleteProduct(id){
        console.error("An error occurred " + err);
    })
 }
+// function todolist({
+
+// })

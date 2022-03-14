@@ -16,6 +16,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [ProductController::class, 'index']);
 
+Route::get('/todo', [ProductController::class, 'todo']);
+
 Route::post('add-new-product', [ProductController::class, 'addProduct']);
 Route::get('fetch-all-product', [ProductController::class, 'fetchProducts']);
 Route::post('get-product', [ProductController::class, 'getProduct']);

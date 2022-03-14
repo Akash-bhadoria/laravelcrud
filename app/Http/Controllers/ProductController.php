@@ -50,4 +50,10 @@ class ProductController extends Controller
         
         return response()->json(['status' => 'success', 'message' => 'Product Deleted successfully']);
     }
+    
+
+    public function todo()
+    {
+        return view('todo');
+    }
 }
