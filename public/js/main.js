@@ -2,14 +2,14 @@
 
 
 $(function() {
+    // fetchAllProducts();
 
     let listData ="";
    axios.get('https://jsonplaceholder.typicode.com/todos')
    .then(res=>{
-    //    console.log(res.data.title)
+        console.log(res.data)
     if(res.data.length>0){
         res.data.forEach(todo=>{
-            let listData = "";
             listData+=`
                         <li class="list-group-item">${todo.title}</li>
                      `;
@@ -21,6 +21,7 @@ $(function() {
    .catch(err=>{
 
    })
+   
 
 })
 

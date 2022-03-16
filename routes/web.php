@@ -1,7 +1,7 @@
 <?php
 
-use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,9 +14,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+require __DIR__.'/auth.php';
+
 Route::get('/', [ProductController::class, 'index']);
 
-Route::get('/todo', [ProductController::class, 'todo']);
+Route::get('/todo', [ProductController::class, 'todo'])->name('todo');
 
 Route::post('add-new-product', [ProductController::class, 'addProduct']);
 Route::get('fetch-all-product', [ProductController::class, 'fetchProducts']);

@@ -1,4 +1,5 @@
 @extends('layout')
+@include('sidebar')
 
 <!DOCTYPE html>
 <html lang="en">
