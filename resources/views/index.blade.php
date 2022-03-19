@@ -1,8 +1,19 @@
 @extends('layout')
 @include('sidebar')
 
+
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <style>
+      h2{
+        font-family: Georgia, 'Times New Roman', Times, serif;
+      }
+      h4{
+        font-family: Georgia, 'Times New Roman', Times, serif;
+      }
+    </style>
+  </head>
 <body style="font-family: Georgia, 'Times New Roman', Times, serif">
 
     <div class="container mt-3">
@@ -10,6 +21,8 @@
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
           Add Product
         </button>
+
+        <hr>
       </div>
       
       <!-- The Modal -->
@@ -91,10 +104,10 @@
           </div>
         </div>
       </div>
-      <hr>
       <br>
       <div class="container mt-3">
-        <h2>Product Record</h2>         
+        <h2>Product Record</h2>   
+        <hr>      
         <table class="table table-bordered" id="productsTable">
           <thead>
             <tr>
@@ -121,6 +134,7 @@
           </tbody>
         </table>
       </div>
+      
     
 </body>
 </html>

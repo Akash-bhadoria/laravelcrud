@@ -125,6 +125,4 @@ function deleteProduct(id){
        console.error("An error occurred " + err);
    })
 }
-// function todolist({
-
-// })
+$('#productsTable').DataTable()

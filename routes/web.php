@@ -14,8 +14,8 @@ use App\Http\Controllers\ProductController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/home', function () {
+    return view('test');
 });
 
 Route::get('/dashboard', function () {
@@ -24,12 +24,12 @@ Route::get('/dashboard', function () {
 
 require __DIR__.'/auth.php';
 
-Route::get('/', [ProductController::class, 'index']);
+Route::get('/', [ProductController::class, 'index'])->name('index')->middleware('auth');
 
 Route::get('/todo', [ProductController::class, 'todo'])->name('todo');
 
-Route::post('add-new-product', [ProductController::class, 'addProduct']);
-Route::get('fetch-all-product', [ProductController::class, 'fetchProducts']);
-Route::post('get-product', [ProductController::class, 'getProduct']);
-Route::post('add-edit-product', [ProductController::class, 'editProduct']);
-Route::post('delete-product', [ProductController::class, 'deleteProduct']);
+Route::post('add-new-product', [ProductController::class, 'addProduct'])->middleware('auth');
+Route::get('fetch-all-product', [ProductController::class, 'fetchProducts'])->middleware('auth');
+Route::post('get-product', [ProductController::class, 'getProduct'])->middleware('auth');
+Route::post('add-edit-product', [ProductController::class, 'editProduct'])->middleware('auth');
+Route::post('delete-product', [ProductController::class, 'deleteProduct'])->middleware('auth');
